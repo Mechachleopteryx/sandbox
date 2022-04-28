@@ -8,7 +8,8 @@ fn main() {
     let arcanum = rand::thread_rng().gen_range(1..101);
 
 
-    //  println!("What is your guess?");
+    loop {
+    println!("What is your guess?");
 
     let mut guess = String::new();
 
@@ -23,6 +24,10 @@ fn main() {
     match guess.cmp(&arcanum) {
         Ordering::Less => println!("Too little."),
         Ordering::Greater => println!("Too big."),
-        Ordering::Equal => println!("You chose wisely!")
+        Ordering::Equal => {
+            println!("You chose wisely!");
+            break;
+        }
+    }
     }
 }
